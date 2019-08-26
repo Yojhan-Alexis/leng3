@@ -1,0 +1,66 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  title Document
+  style.
+    .box{
+    width: 100%;
+    height: 400px;
+    }
+    .box .img{
+    width: 100%;
+    height: 350px;
+    }
+    .box .img img{
+    width: 100%;
+    height: 350px;
+    }
+    .box .boton{
+    width: 100%;
+    height: 50px;
+    background: green;
+    }
+    .boton h3{
+    text-align: center;
+    font-size: 40px;
+    font-family: "Arial";
+    color: #fff;
+    }
+    .boton{
+    display: none;
+    }
+    .box:hover .boton{
+    display: block;
+    }
+    .link:hover{
+    text-decoration: none;
+    }
+    .link .boton h3{
+    text-decoration: none;
+    }
+div(data-role='main')
+  .ui-grid-a
+    .ui-block-a
+      .box
+        a.link(href='index.pug/principal/cliente_pedido' data-ajax='false')
+          .boton
+            h3 REGISTRO
+    .ui-block-b
+      .box
+        a.link(href='index.pUG/principal/cliente_pedido' data-ajax='false')
+          .boton
+            h3 REGISTR DE VENTA
+  .ui-grid-a
+    .ui-block-a
+      .box
+        
+        a.link(href='index.pUG/principal/cliente_pedido' data-ajax='false')
+          .boton
+         
+    .ui-block-b
+      .box
+        a.link(href='index.pUG/principal/cliente_pedido' data-ajax='false')
+          .boton
+            h3 CONTACTOS

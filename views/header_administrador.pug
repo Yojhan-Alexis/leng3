@@ -1,0 +1,57 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  title Document
+  link(rel='stylesheet' href='<?php echo base_url(); ?>jquery.mobile/jquery.mobile-1.4.5.min.css')
+  link(rel='stylesheet' href='<?php echo base_url(); ?>jquery.mobile/jquery.mobile.structure-1.4.5.min.css')
+  link(rel='stylesheet' href='<?php echo base_url(); ?>jquery.mobile/jquery.mobile.icons-1.4.5.min.css')
+  link(rel='stylesheet' href='<?php echo base_url(); ?>css/bootstrap.min.css')
+  style.
+    .hover{
+    width: 100%;
+    height: 5px;
+    display: none;
+    }
+    .c-1{
+    background: aqua;
+    }
+    .c-2{
+    background: rgba(0,0,150,1);
+    }
+    .c-3{
+    background: green;
+    }
+    ul li:hover .hover{
+    display: block;
+    }
+    .banner{
+    display: block;
+    margin: 0 auto;
+    }
+    .margin{
+    margin-top: 22px;
+    }
+div(data-role='main')
+  img.banner(src='<?php echo base_url(); ?>imagenes/banner.jpg' alt='')
+  .ui-grid-a
+    div(data-role='navbar')
+      ul
+        li
+          a(href='index.pug/principal/vistAdmiUsuario' data-ajax='false') Usuarios
+          .hover.c-1
+        li
+          a(href='index.pug/reservas/vistAdmiReservas' data-ajax='false') registro
+          .hover.c-2
+        li
+          a(href='index.pug/pedidos/vistAdmiPedidos' data-ajax='false') venta
+          .hover.c-2
+        li
+          a(href='index.pug/habitaciones/vistAdmiHabitaciones' data-ajax='false') registro de venta
+          .hover.c-2
+        li
+          a(href='index.pug/principal/index' data-ajax='false') Salir
+          .hover.c-2
+script(src='js/popper.min.js')
+script(src='js/bootstrap.min.js')

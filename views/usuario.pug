@@ -1,0 +1,32 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  title Document
+  style.
+    .cont div img{
+    width: 100px;
+    margin-left: 10px;
+    }
+div(data-role='main')
+  // SLIDER BOOSTRAP
+  #carouselExampleControls.carousel.slide(data-ride='carousel')
+    .carousel-inner
+      .carousel-item.active
+    a.carousel-control-prev(href='#carouselExampleControls' role='button' data-slide='prev')
+      span.carousel-control-prev-icon(aria-hidden='true')
+      span.sr-only Previous
+    a.carousel-control-next(href='#carouselExampleControls' role='button' data-slide='next')
+      span.carousel-control-next-icon(aria-hidden='true')
+      span.sr-only Next
+
+    .row.main
+      .col-4.cont
+          p
+            | Somos la registradora de carros por exelencia para que tengas el mejor servicio para su propia comodidad
+      .col-4.cont
+        .text
+          p
+            | Estamos ubicados cerca en los centros turisticos del pais para una mayor facilidad para encontrar el destino
+    

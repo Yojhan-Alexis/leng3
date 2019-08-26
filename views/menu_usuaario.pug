@@ -1,0 +1,52 @@
+    doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  title Document
+  link(rel='stylesheet' href='<?php echo base_url(); ?>css/bootstrap.min.css')
+  style.
+    .hover{
+    width: 100%;
+    height: 5px;
+    display: none;
+    }
+    .c-1{
+    background: aqua;
+    }
+    .c-2{
+    background: rgba(0,0,150,1);
+    }
+    .c-3{
+    background: green;
+    }
+    ul li:hover .hover{
+    display: block;
+    }
+    .banner{
+    display: block;
+    margin: 0 auto;
+    }
+    .margin{
+    margin-top: 22px;
+    }
+div(data-role='main')
+  .ui-grid-a
+    .ui-block-a.margin
+      div(data-role='navbar')
+        ul
+          li
+            a(href='index.pug/principal/servicios' data-ajax='false') Servicios
+            .hover.c-1
+          li
+            a(href='index.pug/principal/contacto1' data-ajax='false') Contactos
+            .hover.c-2
+    .ui-block-b
+      a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+        img(src='imagenes/user.png' alt='')
+      .dropdown-menu(aria-labelledby='navbarDropdown')
+        a.dropdown-item(href='index.pug/principal/index' data-ajax='false') Inicio
+        a.dropdown-item(href='index.pug/principal/ingreso' data-ajax='false') Iniciar Sesi&oacute;n
+        a.dropdown-item(href='index.pug/principal/index' data-ajax='false') Salir
+script(src='js/popper.min.js')
+script(src='js/bootstrap.min.js')

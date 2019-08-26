@@ -1,0 +1,99 @@
+doctype html
+head
+  // Required meta tags
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  // Bootstrap CSS
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO' crossorigin='anonymous')
+  title Hello, world!
+a.btn.btn-primary(href='#' data-toggle='modal' data-target='#mAgregar') Agregar Pedido
+#mAgregar.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+  .modal-dialog(role='document')
+    form(action='<?php echo base_url() ?>index.php/pedidos/agregaPedidos' method='post')
+      .modal-content
+        .modal-header
+          h5#exampleModalLabel.modal-title Agregar Pedido
+          button.close(type='button' data-dismiss='modal' aria-label='Close')
+            span(aria-hidden='true') &times;
+        .modal-body
+          input(type='text' name='nombre' value='' placeholder='Digite su pedido')
+          input(type='text' name='descripcion' value='' placeholder='Haga una breve descripcion')
+          input(type='number' name='habitacion' value='' placeholder='digite numero de habitacion')
+        .modal-footer
+          button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+          button.btn.btn-primary(type='submit') Agregar
+table.table.table-hover
+  thead
+    tr
+      th(scope='col') #
+      th(scope='col') Nombre
+      th(scope='col') descripcion
+      th(scope='col') placa
+      th(scope='col') nit
+      th(scope='col') color
+      th(scope='col') cilindraje
+      th(scope='col') modelo
+      th(scope='col') fecha de venta
+      th(scope='col') marca
+      th(scope='col') precio
+      th(scope='col') modificar
+      th(scope='col') eliminar
+  tbody
+    tr
+      th(scope='row') id; ?&gt;
+      td nombre; ?&gt;
+      td descripcion; ?&gt;
+       td placa; ?&gt;
+        td marca; ?&gt;
+         td fecha de venta; ?&gt;
+          td cilindraje; ?&gt;
+           td nit; ?&gt;
+        td precio; ?&gt;
+         td color; ?&gt;
+          td precio; ?&gt;
+          
+      td
+        a.btn.btn-primary(href='#' data-toggle='modal' data-target='#mModificar<?php echo $fila->id; ?>') Modificar
+      td
+        a.btn.btn-primary(href='' data-toggle='modal' data-target='#mEliminar<?php echo $fila->id; ?>') Eliminar
+    .modal.fade(id='mEliminar<?php echo $fila->id; ?>' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            button.close(type='button' data-dismiss='modal' aria-label='Close')
+              h5#exampleModalLabel.modal-title Eliminar
+              span(aria-hidden='true') &times;
+          .modal-body
+            | Est&aacute; seguro que desea eliminar el pedido
+            | nombre; ?&gt;
+          .modal-footer
+            button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+            a.btn.btn-primary(href='<?php echo base_url() ?>index.php/pedidos/eliminaPedidos/<?php echo $fila->id; ?>') Eliminar
+    .modal.fade(id='mModificar<?php echo $fila->id; ?>' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+      .modal-dialog(role='document')
+        form(action='<?php echo base_url() ?>index.php/pedidos/modificaPedidos/<?php echo $fila->id; ?>' method='post')
+          .modal-content
+            .modal-header
+              h5#exampleModalLabel.modal-title Modal title
+              button.close(type='button' data-dismiss='modal' aria-label='Close')
+                span(aria-hidden='true') &times;
+            .modal-body
+              label(for='') Nombre
+              input(type='text' name='nombre' )
+              label(for='') descripcion
+              input(type='text' name='descripcion')
+              label(for='') color
+              input(type='text' name='colorn' )
+               label(for='') marca
+              input(type='text' name='marca' )
+               label(for='') presio
+              input(type='text' name='presio' )
+               label(for='') nit
+              input(type='text' name='nit' )
+               label(for='cilindraje') 
+              input(type='text' name='cilindraje' )
+               label(for='') fecha de venta 
+              input(type='text' name='fecha de venta' )
+            .modal-footer
+              button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+              button.btn.btn-primary(type='submit') Modificar

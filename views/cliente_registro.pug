@@ -1,0 +1,18 @@
+form(action='<?php echo base_url() ?>index.php/pedidos/agregaPedidos_Cliente' method='post')
+  .modal-content
+    .modal-header
+      h5#exampleModalLabel.modal-title Agregar REDISTRO
+      button.close(type='button' data-dismiss='modal' aria-label='Close')
+        span(aria-hidden='true') &times;
+    .modal-body
+      input(type='text' name='nombre' value='' placeholder='Digite su pedido')
+      input(type='text' name='descripcion' value='' placeholder='Haga una breve descripcion')
+      input(type='number' name='COLOR' value='' placeholder='digite color')
+      input(type='number' name='nit' value='' placeholder='digite numero de nit')
+      input(type='number' name='cilindraje' value='' placeholder='digite numero de cilindraje')
+      input(type='number' name='placa' value='' placeholder='digite numero de placa')
+      input(type='number' name='fecha de venta' value='' placeholder='digite fecha de venta')
+      input(type='number' name='precio' value='' placeholder='digite precio')
+    .modal-footer
+      button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+      button.btn.btn-primary(type='submit') Agregar

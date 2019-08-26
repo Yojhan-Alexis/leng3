@@ -1,0 +1,94 @@
+octype html
+head
+  // Required meta tags
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  // Bootstrap CSS
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO' crossorigin='anonymous')
+  title Hello, world!
+a.btn.btn-primary(href='#' data-toggle='modal' data-target='#mAgregar') Agregar Reserva
+#mAgregar.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+  .modal-dialog(role='document')
+    form(action='<?php echo base_url() ?>index.php/reservas/agregaReservas' method='post')
+      .modal-content
+        .modal-header
+          h5#exampleModalLabel.modal-title Agregar Reserva
+          button.close(type='button' data-dismiss='modal' aria-label='Close')
+            span(aria-hidden='true') &times;
+        .modal-body
+          input(type='text' name='nombre' value='' placeholder='Digite su nombre')
+          input(type='text' name='identificacion' value='' placeholder='Digite su Identificacion')
+          input(type='date' name='fechainicio' value='')
+          input(type='date' name='fechafinal' value='')
+          input(type='number' name='numeropersonas' value='' placeholder='Digite numero de personas')
+          input(type='number' name='numerocamas' value='' placeholder='Digite numero de camas')
+          input(type='number' name='habitacion' value='' placeholder='Digite numero de habitacion')
+        .modal-footer
+          button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+          button.btn.btn-primary(type='submit') Agregar
+table.table.table-hover
+  thead
+    tr
+      th(scope='col') #
+      th(scope='col') Nombre
+      th(scope='col') indentificacion
+      th(scope='col') fecha de inicio
+      th(scope='col') fecha final
+      th(scope='col') numero de personas
+      th(scope='col') numero de camas
+      th(scope='col') habitacion
+      th(scope='col') modificar
+      th(scope='col') eliminar
+  tbody
+    tr
+      th(scope='row') id; ?&gt;
+      td nombre; ?&gt;
+      td identificacion; ?&gt;
+      td fechainicio; ?&gt;
+      td fechafinal; ?&gt;
+      td numeropersonas; ?&gt;
+      td registro; ?&gt;
+      td
+        a.btn.btn-primary(href='#' data-toggle='modal' data-target='#mModificar<?php echo $fila->id; ?>') Modificar
+      td
+        a.btn.btn-primary(href='' data-toggle='modal' data-target='#mEliminar<?php echo $fila->id; ?>') Eliminar
+    .modal.fade(id='mEliminar<?php echo $fila->id; ?>' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            button.close(type='button' data-dismiss='modal' aria-label='Close')
+              h5#exampleModalLabel.modal-title Eliminar
+              span(aria-hidden='true') &times;
+          .modal-body
+            | Est&aacute; seguro que desea eliminar la Reserva de
+            | nombre; ?&gt;
+          .modal-footer
+            button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+            a.btn.btn-primary(href='<?php echo base_url() ?>index.php/reservas/eliminaReservas/<?php echo $fila->id; ?>') Eliminar
+    .modal.fade(id='mModificar<?php echo $fila->id; ?>' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+      .modal-dialog(role='document')
+        form(action='<?php echo base_url() ?>index.php/habitaciones/modificaUsuario/<?php echo $fila->id; ?>' method='post')
+          .modal-content
+            .modal-header
+              h5#exampleModalLabel.modal-title Modal title
+              button.close(type='button' data-dismiss='modal' aria-label='Close')
+                span(aria-hidden='true') &times;
+            .modal-body
+              label(for='') Nombre
+              input(type='text' name='nombre' value='<?php echo $fila->nombre; ?>')
+              label(for='') identificacion
+              input(type='text' name='identificacion' value='<?php echo $fila->identificacion; ?>')
+              label(for='') fecha de inicion
+              input(type='text' name='fechainicio' value='<?php echo $fila->fechainicio; ?>')
+              label(for='') fecha de finalizacion
+              input(type='text' name='fechafinal' value='<?php echo $fila->fechafinal; ?>')
+              label(for='') numero de personas
+              input(type='text' name='numeropersonas' value='<?php echo $fila->numeropersonas; ?>')
+              label(for='') registro
+              input(type='text' name='numerocamas' value='<?php echo $fila->numerocamas; ?>')
+              label(for='') venta
+              input(type='text' name='habitacion' value='<?php echo $fila->habitacion; ?>')
+            .modal-footer
+              button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+              button.btn.btn-primary(type='submit') Modificar
+
